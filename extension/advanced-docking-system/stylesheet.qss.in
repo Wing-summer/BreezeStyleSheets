@@ -113,6 +113,14 @@
     image: url(^style^ads_detach_hover_pressed.svg);
 }
 
+#dockAreaAutoHideButton {
+    qproperty-icon: url(^style^ads_pin.svg);
+}
+
+ads--CAutoHideDockContainer #dockAreaAutoHideButton {
+    qproperty-icon: url(^style^ads_unpin.svg);
+}
+
 /* FLOATING */
 /* Disable the default icons when the dock is floating. */
 ads--CFloatingWidgetTitleBar

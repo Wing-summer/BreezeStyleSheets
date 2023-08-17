@@ -23,7 +23,10 @@
 #tabsMenuButton,
 #detachGroupButton,
 #floatingTitleCloseButton,
-#floatingTitleMaximizeButton
+#floatingTitleMaximizeButton,
+#floatingTitleMaximizeButton,
+#dockAreaAutoHideButton,
+ads--CAutoHideDockContainer #dockAreaAutoHideButton
 {
     qproperty-icon: url(^style^transparent.svg);
     background: ^background^;
@@ -114,11 +117,50 @@
 }
 
 #dockAreaAutoHideButton {
-    qproperty-icon: url(^style^ads_pin.svg);
+    image: url(^style^ads_pin.svg);
 }
 
 ads--CAutoHideDockContainer #dockAreaAutoHideButton {
-    qproperty-icon: url(^style^ads_unpin.svg);
+    image: url(^style^ads_unpin.svg);
+}
+
+ads--CAutoHideDockContainer #dockAreaAutoHideButton {
+    image: url(:/dark/ads_unpin.svg);
+}
+
+#dockAreaAutoHideButton:hover {
+    image: url(:/dark/ads_pin_hover.svg);
+}
+
+ads--CAutoHideDockContainer #dockAreaAutoHideButton :hover {
+    image: url(:/dark/ads_unpin_hover.svg);
+}
+
+#autoHideTitleLabel {
+    padding-left: 5px;
+}
+
+ads--CAutoHideDockContainer ads--CDockAreaTitleBar {
+    padding: 0px;
+    border: none;
+}
+
+ads--CAutoHideTab {
+    background: none;
+    border: none;
+    padding: 8px;
+    text-align: center;
+    min-height: 20px;
+    padding-bottom: 2px;
+}
+
+ads--CAutoHideTab:hover{
+    background: ^highlight^;
+}
+
+QScrollArea#dockWidgetScrollArea {
+    padding: 0px;
+    border: none;
 }
 
 /* FLOATING */
@@ -184,6 +226,43 @@ ads--CDockWidgetTab[activeTab="true"] QLabel
 {
     background-color: ^tab:background:selected^;
 }
+
+ads--CDockContainerWidget > QSplitter{
+    padding: 1 0 1 0;
+}
+
+ads--CDockWidget{
+    border-color: ^foreground^;
+    border-style: solid;
+    border-width: 1px;
+}
+
+ads--CAutoHideSideBar {
+    border:none;
+    qproperty-spacing: 12;
+}
+
+#sideTabsContainerWidget {
+    background: transparent;
+}
+
+
+ads--CAutoHideSideBar[sideBarLocation="0"] {
+    border-bottom: 1px solid ^foreground^;
+}
+
+ads--CAutoHideSideBar[sideBarLocation="1"] {
+    border-right: 1px solid ^foreground^;
+}
+
+ads--CAutoHideSideBar[sideBarLocation="2"] {
+    border-left: 1px solid ^foreground^;
+}
+
+ads--CAutoHideSideBar[sideBarLocation="3"] {
+    border-top: 1px solid ^foreground^;
+}
+
 
 /**
  *  CDockWidgetTab doesn't seem to have the concept of `::next-selected`

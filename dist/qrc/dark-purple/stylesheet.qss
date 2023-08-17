@@ -350,6 +350,7 @@ QMenuBar
 QMenuBar::item
 {
     background: transparent;
+    padding: 3px 8px;
 }
 
 QMenuBar::item:selected
@@ -361,6 +362,10 @@ QMenuBar::item:selected
 QMenuBar::item:disabled
 {
     color: #76797c;
+}
+
+QMenuBar::item:hover                                                                                                                                                                                             {
+    color: #a74bb8;
 }
 
 QMenuBar::item:pressed
@@ -375,6 +380,7 @@ QMenu
 {
     color: #eff0f1;
     margin: 0.09em;
+    border: 0.04em solid #76797c;
 }
 
 QMenu::icon
@@ -1814,6 +1820,7 @@ QListView
 {
     /* Give space for elements aligned left or right. */
     padding: 0.2em;
+    outline: none;
 }
 
 QTableView::item,
@@ -2377,9 +2384,6 @@ QProgressBar:horizontal
     text-align: right;
     padding-left: -0.03em;
     padding-right: -0.03em;
-    margin-top: 0.2em;
-    margin-bottom: 0.2em;
-    margin-right: 1.3em;
 }
 
 QProgressBar:vertical
@@ -2389,9 +2393,6 @@ QProgressBar:vertical
     text-align: bottom;
     padding-top: -0.03em;
     padding-bottom: -0.03em;
-    margin-left: 0.2em;
-    margin-right: 0.2em;
-    margin-bottom: 0.41em;
 }
 
 QProgressBar::chunk:horizontal,
@@ -2535,7 +2536,10 @@ QFrame[frameShape][isWindow="true"][windowFrame="5"]
 #tabsMenuButton,
 #detachGroupButton,
 #floatingTitleCloseButton,
-#floatingTitleMaximizeButton
+#floatingTitleMaximizeButton,
+#floatingTitleMaximizeButton,
+#dockAreaAutoHideButton,
+ads--CAutoHideDockContainer #dockAreaAutoHideButton
 {
     qproperty-icon: url(:/dark-purple/transparent.svg);
     background: #31363b;
@@ -2626,11 +2630,50 @@ QFrame[frameShape][isWindow="true"][windowFrame="5"]
 }
 
 #dockAreaAutoHideButton {
-    qproperty-icon: url(:/dark-purple/ads_pin.svg);
+    image: url(:/dark-purple/ads_pin.svg);
 }
 
 ads--CAutoHideDockContainer #dockAreaAutoHideButton {
-    qproperty-icon: url(:/dark-purple/ads_unpin.svg);
+    image: url(:/dark-purple/ads_unpin.svg);
+}
+
+ads--CAutoHideDockContainer #dockAreaAutoHideButton {
+    image: url(:/dark/ads_unpin.svg);
+}
+
+#dockAreaAutoHideButton:hover {
+    image: url(:/dark/ads_pin_hover.svg);
+}
+
+ads--CAutoHideDockContainer #dockAreaAutoHideButton :hover {
+    image: url(:/dark/ads_unpin_hover.svg);
+}
+
+#autoHideTitleLabel {
+    padding-left: 5px;
+}
+
+ads--CAutoHideDockContainer ads--CDockAreaTitleBar {
+    padding: 0px;
+    border: none;
+}
+
+ads--CAutoHideTab {
+    background: none;
+    border: none;
+    padding: 8px;
+    text-align: center;
+    min-height: 20px;
+    padding-bottom: 2px;
+}
+
+ads--CAutoHideTab:hover{
+    background: #a74bb8;
+}
+
+QScrollArea#dockWidgetScrollArea {
+    padding: 0px;
+    border: none;
 }
 
 /* FLOATING */
@@ -2696,6 +2739,43 @@ ads--CDockWidgetTab[activeTab="true"] QLabel
 {
     background-color: #31363b;
 }
+
+ads--CDockContainerWidget > QSplitter{
+    padding: 1 0 1 0;
+}
+
+ads--CDockWidget{
+    border-color: #eff0f1;
+    border-style: solid;
+    border-width: 1px;
+}
+
+ads--CAutoHideSideBar {
+    border:none;
+    qproperty-spacing: 12;
+}
+
+#sideTabsContainerWidget {
+    background: transparent;
+}
+
+
+ads--CAutoHideSideBar[sideBarLocation="0"] {
+    border-bottom: 1px solid #eff0f1;
+}
+
+ads--CAutoHideSideBar[sideBarLocation="1"] {
+    border-right: 1px solid #eff0f1;
+}
+
+ads--CAutoHideSideBar[sideBarLocation="2"] {
+    border-left: 1px solid #eff0f1;
+}
+
+ads--CAutoHideSideBar[sideBarLocation="3"] {
+    border-top: 1px solid #eff0f1;
+}
+
 
 /**
  *  CDockWidgetTab doesn't seem to have the concept of `::next-selected`

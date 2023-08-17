@@ -350,6 +350,7 @@ QMenuBar
 QMenuBar::item
 {
     background: transparent;
+    padding: 3px 8px;
 }
 
 QMenuBar::item:selected
@@ -361,6 +362,10 @@ QMenuBar::item:selected
 QMenuBar::item:disabled
 {
     color: ^menu:disabled^;
+}
+
+QMenuBar::item:hover                                                                                                                                                                                             {
+    color: ^highlight^;
 }
 
 QMenuBar::item:pressed
@@ -375,6 +380,7 @@ QMenu
 {
     color: ^foreground^;
     margin: 0.09em;
+    border: 0.04em solid #76797c;
 }
 
 QMenu::icon
@@ -1814,6 +1820,7 @@ QListView
 {
     /* Give space for elements aligned left or right. */
     padding: 0.2em;
+    outline: none;
 }
 
 QTableView::item,
@@ -2377,9 +2384,6 @@ QProgressBar:horizontal
     text-align: right;
     padding-left: -0.03em;
     padding-right: -0.03em;
-    margin-top: 0.2em;
-    margin-bottom: 0.2em;
-    margin-right: 1.3em;
 }
 
 QProgressBar:vertical
@@ -2389,9 +2393,6 @@ QProgressBar:vertical
     text-align: bottom;
     padding-top: -0.03em;
     padding-bottom: -0.03em;
-    margin-left: 0.2em;
-    margin-right: 0.2em;
-    margin-bottom: 0.41em;
 }
 
 QProgressBar::chunk:horizontal,
